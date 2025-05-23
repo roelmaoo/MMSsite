@@ -1,15 +1,7 @@
 body {
     font-family: 'Poppins', sans-serif;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
     color: #3A0519;
     background-color: #fff;
-}
-
-#home {
-    margin-top: 0px;
 }
 
 .page-header {
@@ -46,11 +38,12 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
 #home {
+    min-width: 100vh;
     background-color: #f0f0f0;
 }
 
@@ -146,22 +139,15 @@ body {
     background-color: #e0e0e0;
     text-align: center;
     width: 80%;
-    max-width: 1200px;
+    max-width: 1150px;
     margin-top: 50px;
+    border-radius: 10px;
 }
 
 .stats .stat-item {
     font-size: 20px;
     font-weight: 600;
 }
-
-.stats .stat-item b {
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 5px;
-    margin-left: 0px;
-}
-
 
 .page-footer {
     display: flex;
