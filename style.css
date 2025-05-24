@@ -3,6 +3,11 @@ body {
     color: #3A0519;
     background-color: #fff;
     margin: 0;
+    scroll-behavior: smooth !important;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .page-header {
@@ -88,21 +93,24 @@ body {
     padding: 10px;
 }
 
-.card a {
-    text-decoration: none;
-}
 
 .card {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding: 20px;
-    background-color:#3A0519;
+    background-color: #f9f9f9;
     border-radius: 15px;
     height: 500px;
     width: 300px;
     margin: 10px;
-    color: white;
+    color: #3A0519;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    transition:  0.3s;
+    box-shadow: rgba(199, 199, 199, 0.16) 0px 1px 4px, rgb(107, 42, 42) 0px 0px 0px 3px;
 }
 
 .card img {
@@ -213,7 +221,9 @@ body {
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
+
 }
+
 
 .story-image.placeholder {
     width: 100%;
