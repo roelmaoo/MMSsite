@@ -403,10 +403,11 @@ body {
 
 @media (max-width: 768px) {
     .page-header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
         padding: 10px;
+    }
+
+    body {
+        width: 100%;
     }
 
     .page-header .site-title {
@@ -543,45 +544,5 @@ body {
 
     .card {
         width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .container .content h1 {
-        font-size: 22px;
-    }
-
-    .container .content p {
-        font-size: 14px;
-    }
-
-    .stats .main-text {
-        font-size: 25px;
-    }
-
-    .card img {
-        height: 50%;
-    }
-}
-
-@media (max-width: 320px) {
-    .container .content h1 {
-        font-size: 20px;
-    }
-
-    .container .content p {
-        font-size: 12px;
-    }
-
-    .stats .main-text {
-        font-size: 20px;
-    }
-
-    .page-header .site-title {
-        font-size: 20px;
-    }
-
-    .page-header .navigation-links div a {
-        font-size: 14px;
     }
 }
