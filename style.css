@@ -1,5 +1,5 @@
 html {
-    scroll-behavior: smooth ;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -9,23 +9,23 @@ body {
     margin: 0;
 }
 
-
-
 .page-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px;
-    background-color:#3A0519;
+    background-color: #3A0519;
     top: 0;
     position: sticky;
     color: white;
+    z-index: 1000; /* Ensure header stays on top */
 }
 
 .page-header .site-title {
     font-size: 24px;
     font-weight: 600;
     margin-left: 200px;
+    /* Adjust for mobile in media queries */
 }
 
 .page-header .navigation-links {
@@ -35,7 +35,6 @@ body {
 
 .page-header .navigation-links div {
     margin-left: 70px;
-
 }
 
 .page-header .navigation-links div a {
@@ -50,7 +49,7 @@ body {
     background-color: #ffffff;
     color: #3A0519;
     padding: 30px;
-    margin: -30px;
+    margin: -30px; /* This margin might cause layout shifts on hover */
 }
 
 .section {
@@ -60,19 +59,25 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    scroll-margin-top: 100px; 
+    scroll-margin-top: 100px;
+    /* Adjusted for sticky header */
 }
 
 #home {
-    min-width: 100vh;
+    /* min-width: 100vh; - This should be min-height for vertical sections */
+    min-height: 100vh;
     background-color: #f0f0f0;
     background-size: cover;
     background-position: center;
     line-height: 1.1;
     background-image: url(smoking-home-white.png);
-    color:#3A0519;
+    color: #3A0519;
+    /* Ensure content is centered vertically with align-items: center */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center; /* For text within the section */
 }
-
 
 
 #benefits {
@@ -84,14 +89,21 @@ body {
 }
 
 #articles {
-    display: flex;
+    display: flex; /* Keep flex for desktop, adjust in media query */
     background-color: #ffffff;
+    /* Changed to align-items: flex-start or stretch if content has varying heights */
+    align-items: flex-start; /* Ensure cards align at the top */
+    justify-content: center; /* Center the article boxes if they don't fill the width */
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
 }
 
 .article-box {
     display: flex;
     max-width: 100%;
     padding: 10px;
+    /* Allow multiple cards to wrap */
+    flex-wrap: wrap;
+    justify-content: center; /* Center cards within the box */
 }
 
 
@@ -106,11 +118,13 @@ body {
     width: 300px;
     margin: 10px;
     color: #3A0519;
+    /* Flex-shrink: 0 prevents cards from shrinking too much */
+    flex-shrink: 0;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    transition:  0.3s;
+    transition: 0.3s;
     box-shadow: rgba(199, 199, 199, 0.16) 0px 1px 4px, rgb(107, 42, 42) 0px 0px 0px 3px;
 }
 
@@ -123,6 +137,8 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-top: 20px;
+    width: 100%; /* Ensure it fills container width */
+    max-width: 1200px; /* Maintain max-width */
 }
 
 .benefit-card {
@@ -130,7 +146,7 @@ body {
     border-radius: 15px;
     padding: 20px;
     text-align: center;
-
+    border: 1px solid #ddd; /* Moved from duplicate rule */
 }
 
 .benefit-card:hover {
@@ -146,10 +162,11 @@ body {
 
 .benefit-card h3 {
     margin-bottom: 10px;
+    font-size: 18px; /* Moved from duplicate rule */
 }
 
 .benefit-card p {
-    font-size: 14px;
+    font-size: 14px; /* Moved from duplicate rule */
 }
 
 .card img {
@@ -158,33 +175,13 @@ body {
     object-fit: cover;
 }
 
-#benefits {
-    background-color: #f9f9f9;
-}
-
-.benefit-card {
-    text-align: center;
-    border: 1px solid #ddd;
-    padding: 20px;
-}
-
-.benefit-icon {
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-
-.benefit-card h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-}
-
-.benefit-card p {
-    font-size: 14px;
-}
+/* Removed duplicate #benefits and .benefit-card rules */
 
 .content-container {
     margin-left: 10%;
     margin-right: 10%;
+    width: 80%; /* Ensure it's not too wide on desktop */
+    max-width: 1200px; /* Limit max width */
 }
 
 #about {
@@ -196,9 +193,15 @@ body {
 }
 
 .page-footer {
-    background-color: #222;
+    background-color: #222; /* Original footer color */
     color: #fff;
     padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Ensure content stacks for full footer */
+    background-color: #3A0519; /* Your specified footer color */
+    height: auto; /* Allow height to adjust based on content */
 }
 
 .footer-container {
@@ -206,10 +209,14 @@ body {
     justify-content: space-around;
     max-width: 1200px;
     margin: 0 auto;
+    width: 90%; /* Adjust width for better spacing */
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
 }
 
 .footer-column {
-    width: 30%;
+    width: 30%; /* For desktop */
+    padding: 10px; /* Add some padding */
+    box-sizing: border-box; /* Include padding in width */
 }
 
 .footer-column h2 {
@@ -261,6 +268,8 @@ body {
 .story-sharing {
     margin-top: 20px;
     text-align: center;
+    width: 90%; /* Adjust width for better mobile fit */
+    max-width: 800px; /* Max width for larger screens */
 }
 
 .story-sharing h2 {
@@ -268,12 +277,13 @@ body {
 }
 
 .story-sharing textarea {
-    width: 80%;
+    width: calc(100% - 20px); /* Adjust for padding */
     height: 150px;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box; /* Include padding in width */
 }
 
 .story-sharing .share-story-link {
@@ -301,13 +311,18 @@ body {
 .container {
     display: flex;
     align-items: center;
-    width: 80%;
+    width: 80%; /* Maintain desktop width */
     max-width: 1200px;
+    /* Add flex-wrap for mobile content to stack */
+    flex-wrap: wrap;
+    justify-content: center; /* Center content when wrapped */
+    text-align: center; /* Center text on mobile */
 }
 
 .container .content {
-    width: 50%;
+    width: 50%; /* For desktop */
     padding-right: 20px;
+    /* Adjust for mobile in media query */
 }
 
 .container .content h1 {
@@ -333,11 +348,13 @@ body {
 .container .image-container {
     display: flex;
     justify-content: center;
-    width: 50%;
+    width: 50%; /* For desktop */
+    /* Adjust for mobile in media query */
 }
 
 .container .image-container .image {
     max-width: 100%;
+    height: auto; /* Ensure image scales properly */
     border-radius: 10px;
 }
 
@@ -345,51 +362,51 @@ body {
     display: flex;
     justify-content: space-around;
     padding: 30px;
-    background-color:#3A0519;
+    background-color: #3A0519;
     text-align: center;
     width: 80%;
     max-width: 1150px;
     margin-top: 50px;
     border-radius: 10px;
+    /* Flex-wrap for mobile stacking */
+    flex-wrap: wrap;
 }
 
 .stats .stat-item {
     font-size: 20px;
     font-weight: 600;
     color: #ffffff;
-    width: 20%;
+    width: 20%; /* For desktop */
+    /* Adjust for mobile in media query */
 }
 
 .stats .main-text {
     font-weight: bold;
     font-size: 35px;
     margin: 0px;
-    
 }
 
-
-.page-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #3A0519;
-    height:150px;
-    color: white;
-}
 
 .stories-container {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
+    flex-wrap: wrap; /* Allow story cards to wrap */
+    width: 100%; /* Ensure it takes full width */
+    max-width: 1200px; /* Max width */
+    padding: 0 10px; /* Add some padding */
+    box-sizing: border-box;
 }
 
 .story-card {
-    width: 30%;
+    width: 30%; /* For desktop */
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
-
+    margin: 10px; /* Add margin for spacing between cards */
+    box-sizing: border-box; /* Include padding and border in width */
+    flex-grow: 1; /* Allow cards to grow if space permits */
+    min-width: 280px; /* Minimum width before stacking */
 }
 
 
@@ -401,42 +418,53 @@ body {
 }
 
 
+/* --- Mobile Media Queries --- */
+
+/* For screens smaller than 768px (common tablet portrait / large phone landscape) */
 @media (max-width: 768px) {
     .page-header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
+        padding: 15px 20px; /* Adjust header padding */
+        /* width: 100vh; - This is incorrect, should be 100% or auto */
+        width: auto; /* Allow header width to adjust */
+        flex-wrap: wrap; /* Allow header content to wrap if needed */
+        justify-content: center; /* Center header content */
     }
 
     .page-header .site-title {
-        margin-left: 0;
-        margin-bottom: 0;
-        text-align: left;
+        margin-left: 0; /* Remove fixed margin */
+        text-align: center; /* Center title */
+        width: 100%; /* Take full width if navigation is hidden */
+        margin-bottom: 10px; /* Add space if navigation is below */
     }
 
     .page-header .navigation-links {
-        display: none;
+        display: none; /* Hide navigation links for smaller screens, consider a hamburger menu with JS */
+        /* If you want to keep them, stack them: */
+        /* flex-direction: column; */
+        /* width: 100%; */
+        /* margin-right: 0; */
     }
 
-    .page-header .navigation-links div {
+    /* .page-header .navigation-links div {
         margin-left: 0;
-        margin-bottom: 5px;
-    }
+        margin-bottom: 10px;
+    } */
 
     .container {
-        flex-direction: column;
+        flex-direction: column; /* Stack content and image */
         text-align: center;
+        width: 90%; /* Adjust container width */
+        padding: 0; /* Remove excessive container padding */
     }
 
     .container .content {
-        width: 100%;
+        width: 100%; /* Content takes full width */
         padding-right: 0;
         margin-bottom: 20px;
     }
 
     .container .image-container {
-        width: 100%;
+        width: 100%; /* Image takes full width */
     }
 
     .container .content h1 {
@@ -448,80 +476,73 @@ body {
     }
 
     .section {
-        padding: 20px;
-    }
-
-    .container {
-        width: 90%;
-    }
-
-    .container .content {
-        width: 100%;
-        padding-right: 0;
+        padding: 20px; /* Smaller section padding */
+        min-height: auto; /* Allow sections to shrink on mobile */
+        scroll-margin-top: 70px; /* Adjust for potentially smaller sticky header */
     }
 
     .content-container {
         margin-left: 5%;
         margin-right: 5%;
-    }
-
-    .container .content h1 {
-        font-size: 24px;
-    }
-
-    .container .content p {
-        font-size: 16px;
+        width: 90%; /* Ensure content takes up more space */
     }
 
     #articles {
-        flex-direction: column;
+        flex-direction: column; /* Stack articles */
+        align-items: center; /* Center stacked articles */
     }
 
     .article-box {
-        flex-direction: column;
+        flex-direction: column; /* Stack cards within article box */
         padding: 0;
+        width: 100%; /* Article box takes full width */
+        align-items: center; /* Center cards within article box */
     }
 
     .card {
-        width: 100%;
+        width: 90%; /* Make cards take up most of the width */
+        max-width: 350px; /* Prevent cards from getting too wide on tablets */
+        margin: 15px 0; /* More vertical space between stacked cards */
+        height: auto; /* Allow card height to adjust based on content */
     }
 
     .benefits-grid {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(1, 1fr); /* Single column for benefits */
         padding: 0;
     }
 
     .stats {
-        flex-direction: column;
+        flex-direction: column; /* Stack stats items */
+        width: 90%; /* Adjust stats container width */
+        margin-top: 30px; /* Adjust top margin */
+        padding: 20px; /* Adjust padding */
     }
 
     .stats .stat-item {
-        width: 100%;
-        margin-bottom: 10px;
+        width: 100%; /* Each stat item takes full width */
+        margin-bottom: 15px; /* Add space between stacked items */
     }
 
     .benefit-card {
-        padding: 10px;
-    }
-
-    .content-container {
-        margin-left: 2%;
-        margin-right: 2%;
+        padding: 15px; /* Adjust padding for benefit cards */
     }
 
     .footer-container {
-        flex-direction: column;
+        flex-direction: column; /* Stack footer columns */
         text-align: center;
+        width: 90%; /* Adjust footer width */
     }
 
     .footer-column {
-        width: 100%;
+        width: 100%; /* Each footer column takes full width */
         margin-bottom: 20px;
     }
 
+    /* #home .container overrides general container, adjust specific to home */
     #home .container {
-        width: 100%;
-        padding: 20px;
+        width: 90%; /* Adjust home container width */
+        padding: 0; /* Remove specific padding that might conflict */
+        flex-direction: column; /* Ensure content stacks here too */
     }
 
     #home .content {
@@ -529,61 +550,72 @@ body {
         text-align: center;
     }
 
-    .page-header .navigation-links {
-        flex-direction: column;
+    .stories-container {
+        flex-direction: column; /* Stack story cards */
+        align-items: center; /* Center stacked story cards */
     }
 
-    .page-header .navigation-links div {
-        margin-left: 0;
-    }
-
-    .article-box {
-        flex-direction: column;
-    }
-
-    .card {
-        width: 100%;
+    .story-card {
+        width: 90%; /* Make story cards take most of the width */
+        max-width: 400px; /* Prevent from getting too wide */
+        margin: 15px 0; /* More vertical space */
     }
 }
 
+/* For screens smaller than 480px (common phone portrait) */
 @media (max-width: 480px) {
+    .page-header .site-title {
+        font-size: 20px; /* Smaller title font size */
+    }
+
     .container .content h1 {
-        font-size: 22px;
+        font-size: 24px; /* Smaller heading font size */
     }
 
     .container .content p {
-        font-size: 14px;
+        font-size: 15px; /* Smaller paragraph font size */
     }
 
     .stats .main-text {
-        font-size: 25px;
+        font-size: 30px; /* Smaller stats numbers */
+    }
+
+    .stats .stat-item {
+        font-size: 18px; /* Smaller stats text */
     }
 
     .card img {
-        height: 50%;
+        height: 50%; /* Image height for cards */
+    }
+
+    .story-sharing textarea {
+        height: 120px; /* Slightly smaller textarea */
+    }
+
+    .page-header {
+        padding: 10px 15px; /* Even less padding for header */
     }
 }
 
+/* For very small screens, adjust minimal font sizes */
 @media (max-width: 320px) {
     .container .content h1 {
-        font-size: 20px;
+        font-size: 22px; /* Even smaller heading */
     }
 
     .container .content p {
-        font-size: 12px;
+        font-size: 14px; /* Even smaller paragraph */
     }
 
     .stats .main-text {
-        font-size: 20px;
+        font-size: 25px; /* Smallest stats numbers */
+    }
+
+    .stats .stat-item {
+        font-size: 16px; /* Smallest stats text */
     }
 
     .page-header .site-title {
-        font-size: 20px;
-    }
-
-    .page-header .navigation-links div a {
-        font-size: 14px;
-    }
-}
+        font-size: 18px; /* Smallest header title */
     }
 }
