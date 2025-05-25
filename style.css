@@ -513,4 +513,30 @@ body {
         width: 100%;
         margin-bottom: 20px;
     }
+
+    #home .container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    #home .content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .page-header .navigation-links {
+        flex-direction: column;
+    }
+
+    .page-header .navigation-links div {
+        margin-left: 0;
+    }
+
+    .article-box {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
 }
