@@ -15,7 +15,12 @@
         <div class="site-title">
             SITE TITLE
         </div>
-        <div class="navigation-links">
+        <div class="hamburger-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="navigation-drawer">
             <div class="navigate-button"><a href="#home">Home</a></div>
             <div class="navigate-button"><a href="#articles">Articles</a></div>
             <div class="navigate-button"><a href="#benefits">Benefits</a></div>
@@ -215,5 +220,13 @@ ABS-CBN News
             </div>
         </div>
     </footer>
+    <script>
+        const hamburgerIcon = document.querySelector('.hamburger-icon');
+        const navigationDrawer = document.querySelector('.navigation-drawer');
+
+        hamburgerIcon.addEventListener('click', () => {
+            navigationDrawer.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
