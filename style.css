@@ -378,7 +378,7 @@ body {
     object-fit: cover;
 }
 
-/* --- Stats Section --- */
+/* --- Stats Section (Original) --- */
 .stats {
     display: flex;
     justify-content: space-around;
@@ -406,6 +406,69 @@ body {
     margin: 0px;
     display: block; /* Ensure it takes its own line */
 }
+
+
+/* --- NEW: Stats Section (Alternative UI from image) --- */
+.stats-alt-container {
+    background-color: #f9f9f9; /* Light background as in image */
+    border-radius: 20px; /* Rounded corners */
+    padding: 40px; /* Generous padding */
+    width: 90%;
+    max-width: 1000px; /* Adjusted max-width to match image feel */
+    margin: 50px auto; /* Center the container */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* More pronounced shadow */
+    text-align: left; /* Text aligns to left */
+    color: #3A0519; /* Text color */
+}
+
+.stats-alt-container h2 {
+    font-size: 32px; /* Larger heading */
+    margin-bottom: 10px;
+    color: #3A0519;
+    font-weight: 700;
+}
+
+.stats-alt-container p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 40px; /* Space between text and stats grid */
+    color: #555;
+}
+
+.stats-grid-alt {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns on desktop */
+    gap: 30px 50px; /* Increased gap, vertical then horizontal */
+    width: 100%;
+}
+
+.stat-item-alt {
+    display: flex;
+    align-items: center; /* Align icon and text vertically */
+    text-align: left; /* Ensure content inside item is left-aligned */
+}
+
+.stat-icon-alt {
+    font-size: 30px; /* Icon size */
+    color: #3A0519; /* Icon color */
+    margin-right: 15px; /* Space between icon and text */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.stat-item-alt .main-text-alt {
+    font-size: 38px; /* Large number */
+    font-weight: 700; /* Bolder font */
+    color: #3A0519;
+    line-height: 1.2; /* Tighter line height for numbers */
+    display: block; /* Ensures it takes its own line */
+}
+
+.stat-item-alt .sub-text-alt {
+    font-size: 16px; /* Description text */
+    color: #555;
+    display: block; /* Ensures it takes its own line */
+}
+
 
 /* --- Footer --- */
 .page-footer {
@@ -622,7 +685,7 @@ body {
     }
 
 
-    /* Stats Mobile */
+    /* Stats Mobile (Original) */
     .stats {
         flex-direction: column;
         width: 95%; /* Wider on mobile */
@@ -637,6 +700,37 @@ body {
 
     .stats .main-text {
         font-size: 32px; /* Adjust size for mobile */
+    }
+
+    /* NEW: Stats Section (Alternative UI from image) Mobile */
+    .stats-alt-container {
+        padding: 25px; /* Reduced padding on mobile */
+        width: 95%; /* Wider on mobile */
+        text-align: center; /* Center text on mobile */
+    }
+    .stats-alt-container h2,
+    .stats-alt-container p {
+        text-align: center; /* Center these elements */
+    }
+    .stats-grid-alt {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 25px; /* Adjust gap for mobile */
+    }
+    .stat-item-alt {
+        flex-direction: column; /* Stack icon and text vertically */
+        align-items: center; /* Center items in column */
+        text-align: center; /* Center text within item */
+    }
+    .stat-icon-alt {
+        margin-right: 0; /* Remove horizontal margin */
+        margin-bottom: 10px; /* Add vertical margin */
+        font-size: 35px; /* Slightly larger icons for better visibility */
+    }
+    .stat-item-alt .main-text-alt {
+        font-size: 32px; /* Adjust number size for mobile */
+    }
+    .stat-item-alt .sub-text-alt {
+        font-size: 15px; /* Adjust description size for mobile */
     }
 
     /* Footer Mobile */
@@ -696,6 +790,17 @@ body {
     .story-sharing textarea {
         height: 100px; /* Smaller textarea */
     }
+
+    /* NEW: Stats Section (Alternative UI from image) smaller screens */
+    .stats-alt-container h2 {
+        font-size: 28px;
+    }
+    .stat-item-alt .main-text-alt {
+        font-size: 28px; /* Further adjust number size */
+    }
+    .stat-icon-alt {
+        font-size: 30px; /* Slightly smaller icon */
+    }
 }
 
 /* For very small screens (e.g., iPhone SE) */
@@ -733,5 +838,22 @@ body {
     }
     .story-image.placeholder {
         height: 180px; /* Adjust placeholder image height */
+    }
+
+    /* NEW: Stats Section (Alternative UI from image) very small screens */
+    .stats-alt-container h2 {
+        font-size: 24px;
+    }
+    .stats-alt-container p {
+        font-size: 14px;
+    }
+    .stat-item-alt .main-text-alt {
+        font-size: 24px;
+    }
+    .stat-item-alt .sub-text-alt {
+        font-size: 13px;
+    }
+    .stat-icon-alt {
+        font-size: 28px;
     }
 }
