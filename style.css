@@ -446,11 +446,17 @@ body {
     }
 
     .card {
-        width: 100%;
+        width: 90%;
     }
 
     .benefits-grid {
         grid-template-columns: repeat(1, 1fr);
+		padding: 10px;
+    }
+
+    .content-container {
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
     .footer-container {
