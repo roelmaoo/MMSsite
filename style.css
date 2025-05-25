@@ -258,6 +258,35 @@ body {
     opacity: 0.7;
 }
 
+.story-sharing {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.story-sharing h2 {
+    margin-bottom: 10px;
+}
+
+.story-sharing textarea {
+    width: 80%;
+    height: 150px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.story-sharing .share-story-link {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
 .feedback-link {
     display: inline-block;
     margin-top: 10px;
@@ -370,6 +399,7 @@ body {
     background-color: #ddd;
     margin-bottom: 10px;
 }
+
 
 @media (max-width: 768px) {
     .container {
