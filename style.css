@@ -428,7 +428,6 @@ body {
     .container {
         flex-direction: column;
         text-align: center;
-        flex-wrap: wrap;
     }
 
     .container .content {
@@ -454,12 +453,16 @@ body {
     }
 
     .container {
-        width: 90%;
+        width: 100%;
     }
 
     .container .content {
         width: 100%;
         padding-right: 0;
+    }
+
+    .card {
+        width: 90%;
     }
 
     .content-container {
@@ -482,7 +485,6 @@ body {
     .article-box {
         flex-direction: column;
         padding: 0;
-        flex-wrap: wrap;
     }
 
     .card {
