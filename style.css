@@ -404,17 +404,19 @@ body {
 @media (max-width: 768px) {
     .page-header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .page-header .site-title {
         margin-left: 0;
         margin-bottom: 10px;
+        text-align: center;
     }
 
     .page-header .navigation-links {
         margin-right: 0;
         flex-direction: column;
+        align-items: center;
     }
 
     .page-header .navigation-links div {
@@ -445,18 +447,61 @@ body {
         font-size: 16px;
     }
 
+    .section {
+        padding: 20px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .container .content {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .container .content h1 {
+        font-size: 24px;
+    }
+
+    .container .content p {
+        font-size: 16px;
+    }
+
+    #articles {
+        flex-direction: column;
+    }
+
+    .article-box {
+        flex-direction: column;
+        padding: 0;
+    }
+
     .card {
-        width: 90%;
+        width: 100%;
     }
 
     .benefits-grid {
         grid-template-columns: repeat(1, 1fr);
-		padding: 10px;
+        padding: 0;
+    }
+
+    .stats {
+        flex-direction: column;
+    }
+
+    .stats .stat-item {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .benefit-card {
+        padding: 10px;
     }
 
     .content-container {
-        margin-left: 5%;
-        margin-right: 5%;
+        margin-left: 2%;
+        margin-right: 2%;
     }
 
     .footer-container {
