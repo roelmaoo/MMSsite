@@ -160,7 +160,7 @@ body {
 }
 
 #home .container .content h1 {
-    font-size: 36px;
+    font-size: 20px;
     margin-bottom: 20px;
     text-shadow: none;
 }
@@ -607,7 +607,8 @@ body {
     }
 
     #home .container .content h1 {
-        font-size: 28px;
+        font-size: 20px;
+        margin-bottom: 10px;
     }
 
     #home .container .content p {
